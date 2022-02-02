@@ -68,8 +68,7 @@ def get_season_stats(url, season_dict, player_name):
     ###    
     
     games_arr = []
-    test_boxscores = game_boxscores[:2]
-    for game_obj in test_boxscores:
+    for game_obj in game_boxscores:
         print(f"Scraping Game #{len(games_arr)+1}", end='\r') # doing +1 so user can see what current game is being added
         req_game_page = urlopen(game_obj.get("URL"))
         game_page = BeautifulSoup(req_game_page, features="lxml")
